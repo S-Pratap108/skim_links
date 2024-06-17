@@ -37,8 +37,9 @@
             )
             (fields
                 access_token :<= "access_token"
+                refresh_token
                 token_type :<= "token_type"
-                scope :<= "scope"
+                scope 
                 realm_id :<= "realmId"
                 expires_in :<= "expires_in"
             )
@@ -59,6 +60,7 @@
 )
 
 (entity MERCHANT 
+        "represents a merchant program having an active relationship with the authenticated user in Skimlinks' system"
         (api-docs-url "https://developers.skimlinks.com/merchant.html")
         (source (http/get :url "/publisher/{PublisherId}/merchants")
                 (extract-path "merchants")
