@@ -20,6 +20,14 @@
         :required true
     )
 
+    (text-field
+        :name "publisherDomainId" 
+        :label "Publisher Domain Id"
+        :placeholder "Enter Publisher Domain Id"
+        :required true
+    )
+    
+
     (oauth2/refresh-token-with-client-credentials
         (token
             (source
@@ -65,7 +73,7 @@
     (api-docs-url "https://developers.skimlinks.com/merchant.html")
     (source (http/get :url "/publisher/{publisherId}/merchants")
             (query-params "publisher_id" "{publisherId}"
-                            "publisher_domain_id" )
+                            "publisher_domain_id" "{publisherDomainId}" )
             (setup-test
                 (upon-receiving :code 200 :action (pass)))
             (extract-path "merchants"))    
