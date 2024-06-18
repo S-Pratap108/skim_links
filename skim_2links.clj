@@ -1,5 +1,3 @@
-
-
 (config
     (text-field
         :name "clientId" 
@@ -69,3 +67,4 @@
                               "publisher_domain_id" )
         )
 )
+
